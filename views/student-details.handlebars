@@ -1,0 +1,30 @@
+<main>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card" style="width: 48rem;">
+                <img class="img img-fluid" src="/images/{{patientName}}.{{imgExtension}}" alt="">
+            </div>
+        </div>
+        <div class="col-md-3 ml-4 mt-2">
+            <form action="/edit-patient/{{patientId}}" method="POST">
+            <span>
+                <input type="submit" class="btn btn-outline-primary mb-2" value="Edit">
+            </span>
+            </form>
+           
+            <span class="h3 newfont">Name: {{patientName}}</span>
+             <br>
+            <span class="h3 newfont">Age: {{patientAge}}</span>
+            <br>
+            <span class="h3 ml-2 newfont">Sex: {{patientSex}}</span>
+            <br>
+            <h1>Logs</h1>
+             {{#each patientLogs}}
+                <span class="newfont">{{this}}</span>
+                <br>
+                <hr>
+            {{/each}}
+         
+        </div>
+    </div>
+</main>
